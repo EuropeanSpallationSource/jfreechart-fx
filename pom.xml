@@ -88,11 +88,15 @@
     </dependencies>
 
     <distributionManagement>
-        <snapshotRepository>
-          <id>ossrh</id>
-          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>    
+         <repository>
+             <id>ess-ics</id>
+             <url>https://artifactory01.esss.lu.se/artifactory/libs-release-local</url>
+         </repository>
+         <snapshotRepository>
+             <id>ess-ics</id>
+             <url>https://artifactory01.esss.lu.se/artifactory/libs-snapshot-local</url>
+         </snapshotRepository>
+     </distributionManagement>
     
     <build>
 
