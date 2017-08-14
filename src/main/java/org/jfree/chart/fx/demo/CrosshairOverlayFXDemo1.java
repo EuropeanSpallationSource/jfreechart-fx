@@ -36,7 +36,6 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.geom.Rectangle2D;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -51,10 +50,12 @@ import org.jfree.chart.fx.overlay.CrosshairOverlayFX;
 import org.jfree.chart.plot.Crosshair;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.ui.RectangleEdge;
-import org.jfree.data.general.DatasetUtilities;
+import org.jfree.data.general.DatasetUtils;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+
+import static javafx.application.Application.launch;
 
 /**
  * A demo showing crosshairs that follow the data points on an XYPlot.
@@ -114,7 +115,7 @@ public class CrosshairOverlayFXDemo1 extends Application {
             if (!xAxis.getRange().contains(x)) { 
                 x = Double.NaN;                  
             }
-            double y = DatasetUtilities.findYValue(plot.getDataset(), 0, x);
+            double y = DatasetUtils.findYValue(plot.getDataset(), 0, x);
             this.xCrosshair.setValue(x);
             this.yCrosshair.setValue(y);
         }

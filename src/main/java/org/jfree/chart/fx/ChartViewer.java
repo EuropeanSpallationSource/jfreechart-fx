@@ -44,7 +44,6 @@ package org.jfree.chart.fx;
 
 import java.io.File;
 import java.io.IOException;
-import javafx.event.EventHandler;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
@@ -60,7 +59,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.fx.interaction.ChartMouseListenerFX;
 import org.jfree.chart.fx.interaction.ZoomHandlerFX;
 import org.jfree.chart.util.ExportUtils;
-import org.jfree.chart.util.ParamChecks;
+import org.jfree.chart.util.Args;
 
 /**
  * A control for displaying a {@link JFreeChart} in JavaFX (embeds a 
@@ -152,7 +151,7 @@ public class ChartViewer extends Region {
      * @param chart  the chart ({@code null} not permitted). 
      */
     public void setChart(JFreeChart chart) {
-        ParamChecks.nullNotPermitted(chart, "chart");
+        Args.nullNotPermitted(chart, "chart");
         this.canvas.setChart(chart);
     }
 
@@ -225,7 +224,7 @@ public class ChartViewer extends Region {
      * @param listener  the listener ({@code null} not permitted).
      */
     public void addChartMouseListener(ChartMouseListenerFX listener) {
-        ParamChecks.nullNotPermitted(listener, "listener");
+        Args.nullNotPermitted(listener, "listener");
         this.canvas.addChartMouseListener(listener);
     }
 
@@ -236,7 +235,7 @@ public class ChartViewer extends Region {
      * @param listener  the listener.
      */
     public void removeChartMouseListener(ChartMouseListenerFX listener) {
-        ParamChecks.nullNotPermitted(listener, "listener");
+        Args.nullNotPermitted(listener, "listener");
         this.canvas.removeChartMouseListener(listener);
     }
     
